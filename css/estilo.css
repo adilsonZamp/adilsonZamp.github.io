@@ -74,6 +74,36 @@ body {
     box-shadow: 0 10px 25px black;
 }
 
+#skills {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 10%;
+    justify-content: space-between;
+}
+#skills .skill-card {
+    display: flex;
+    flex-direction: column;
+    background-color: grey;
+    padding: 1%;
+    margin: 1%;
+    border-radius: 5%;
+    align-items: center;
+    transition: margin 0.3s ease;
+}
+#skills .skill-card:hover {
+    box-shadow: 0 10px 25px black;
+    margin: 25px;
+}
+#skills p {
+    padding: 10px;
+    text-align: justify;
+}
+#skills img {
+    width: 30%;
+}
+
 @media (max-width: 900px) {
     .home {
         flex-direction: column-reverse;
@@ -88,5 +118,29 @@ body {
     }
     .home-img {
         padding-bottom: 30px;
+    }
+
+    #skills {
+        grid-template-columns: auto auto;
+        padding-left: 3%;
+        padding-right: 3%;
+        padding-bottom: 5%;
+        justify-content: space-between;
+    }
+    #skills .skill-card {
+        border-radius: 10%;
+    }
+    #skills .skill-card:hover {
+        margin: 5px;
+    }
+    #skills p {
+        padding: 1%;
+        font-size: 1em;
+    }
+    #skills h3 {
+        font-size: 1em;
+    }
+    #skills img {
+        width: 30%;
     }
 }
