@@ -1,4 +1,5 @@
 const themeToggle = document.getElementById('themeToggle');
+const linkCurriculo = document.getElementById('curriculo');
 const body = document.body;
 const themeIcon = document.querySelector('.theme-icon');
 
@@ -20,9 +21,15 @@ function loadSavedTheme() {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'light') {
         body.classList.add('light-mode');
+        body.classList.remove('dark-mode');
+        linkCurriculo.classList.add('light-mode')
+        linkCurriculo.classList.remove('dark-mode');
         themeIcon.className = 'bx bx-moon theme-icon';
     } else {
         body.classList.remove('light-mode');
+        body.classList.add('dark-mode');
+        linkCurriculo.classList.remove('light-mode')
+        linkCurriculo.classList.add('dark-mode');
         themeIcon.className = 'bx bx-sun theme-icon';
     }
 }
@@ -33,4 +40,8 @@ if (document.readyState === 'loading') {
     loadSavedTheme();
 }
 
-themeToggle.addEventListener('click', () => {toggleTheme();});
+themeToggle.addEventListener('click', () => {
+        toggleTheme();
+        loadSavedTheme();
+    }
+);
